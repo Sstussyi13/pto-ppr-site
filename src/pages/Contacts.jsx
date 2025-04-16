@@ -53,9 +53,14 @@ export default function Contacts() {
                 </button>
               </form>
             ) : (
-              <div className="text-green-700 bg-green-100 p-6 rounded text-center text-sm">
-                ✅ Спасибо! Ваша заявка отправлена. Мы свяжемся с вами в ближайшее время.
+                <div className="flex items-center gap-3 bg-green-50 border border-green-200 text-green-800 p-5 rounded-md shadow-sm">
+                <span className="text-xl">✅</span>
+                <div className="text-sm">
+                  <p className="font-medium">Спасибо за вашу заявку!</p>
+                  <p className="text-green-700 mt-1">Мы свяжемся с вами в ближайшее время.</p>
+                </div>
               </div>
+              
             )}
           </div>
 

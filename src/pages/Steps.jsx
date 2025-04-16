@@ -63,12 +63,12 @@ export default function Steps() {
   
           {/* Кнопка */}
           <div className="text-center mt-14">
-            <a
-              href="/contacts"
-              className="inline-block w-full sm:w-auto bg-primary text-white px-6 py-3 rounded-full hover:bg-accent transition"
-            >
+            <Link
+                        to="/contacts"
+                        className="inline-block w-full sm:w-auto bg-white text-gray-800 font-semibold px-6 py-3 rounded-full hover:bg-gray-300 transition"
+                      >
               Обсудить проект
-            </a>
+            </Link>
           </div>
         </div>
       </section>

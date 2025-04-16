@@ -99,12 +99,12 @@ export default function Services() {
             <PriceTable prices={prices} />
           </div>
           <div className="text-center mt-8">
-            <a
-              href="/contacts"
-              className="inline-block bg-primary hover:bg-accent text-white px-6 py-3 rounded-full transition text-sm sm:text-base"
-            >
+            <Link
+                        to="/contacts"
+                        className="inline-block w-full sm:w-auto bg-white text-gray-800 font-semibold px-6 py-3 rounded-full hover:bg-gray-300 transition"
+                      >
               Получить точный расчёт
-            </a>
+            </Link>
           </div>
         </div>
       </div>
