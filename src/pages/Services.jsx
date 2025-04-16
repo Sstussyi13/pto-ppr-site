@@ -1,6 +1,8 @@
 import { useState } from "react";
 import ServiceCard from "../components/ServiceCard";
 import PriceTable from "../components/PriceTable";
+import { Link } from "react-router-dom";
+
 
 export default function Services() {
   const services = [

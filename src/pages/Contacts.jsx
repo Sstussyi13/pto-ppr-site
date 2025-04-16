@@ -22,22 +22,33 @@ export default function Contacts() {
           <div className="bg-light border border-gray-200 rounded-md p-6 sm:p-8 shadow-sm hover:shadow transition">
             {!submitted ? (
               <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
+                {/* Имя */}
                 <div>
                   <label className="block text-sm font-medium mb-1">Имя</label>
                   <input
                     type="text"
                     required
+                    placeholder="Ваше имя"
+                    pattern="^[a-zA-Zа-яА-ЯёЁ\s\-]{2,30}$"
+                    title="Имя может содержать только буквы, пробелы и дефис"
                     className="w-full px-4 py-2 border rounded-md bg-white text-primary focus:outline-none focus:ring focus:ring-primary/30 text-sm"
                   />
                 </div>
+
+                {/* Телефон */}
                 <div>
                   <label className="block text-sm font-medium mb-1">Телефон</label>
                   <input
                     type="tel"
                     required
+                    placeholder="+7 (999) 123-45-67"
+                    pattern="^\+?[0-9\s\-\(\)]{10,20}$"
+                    title="Введите корректный номер телефона"
                     className="w-full px-4 py-2 border rounded-md bg-white text-primary focus:outline-none focus:ring focus:ring-primary/30 text-sm"
                   />
                 </div>
+
+                {/* Сообщение */}
                 <div>
                   <label className="block text-sm font-medium mb-1">Сообщение</label>
                   <textarea
@@ -45,6 +56,8 @@ export default function Contacts() {
                     className="w-full px-4 py-2 border rounded-md bg-white text-primary resize-none focus:outline-none focus:ring focus:ring-primary/30 text-sm"
                   ></textarea>
                 </div>
+
+                {/* Кнопка */}
                 <button
                   type="submit"
                   className="w-full bg-primary text-white py-2 rounded-md hover:bg-accent transition text-sm"
@@ -53,14 +66,13 @@ export default function Contacts() {
                 </button>
               </form>
             ) : (
-                <div className="flex items-center gap-3 bg-green-50 border border-green-200 text-green-800 p-5 rounded-md shadow-sm">
+              <div className="flex items-center gap-3 bg-green-50 border border-green-200 text-green-800 p-5 rounded-md shadow-sm">
                 <span className="text-xl">✅</span>
                 <div className="text-sm">
                   <p className="font-medium">Спасибо за вашу заявку!</p>
                   <p className="text-green-700 mt-1">Мы свяжемся с вами в ближайшее время.</p>
                 </div>
               </div>
-              
             )}
           </div>
 
