@@ -67,24 +67,25 @@ export default function Home() {
         </div>
       </section>
 
-{/* Ссылки на разделы */}
+      import { Link } from "react-router-dom";
+
 <section className="bg-white py-16 px-4 sm:px-6 border-t border-gray-100">
   <div className="max-w-6xl mx-auto text-center">
-    <h2 className="text-2xl sm:text-3xl font-semibold mb-10">Что мы делаем</h2>
+    <h2 className="text-2xl sm:text-3xl font-semibold mb-10">Разделы сайта</h2>
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 text-left">
       {[
         { label: "Услуги", link: "/services" },
         { label: "Этапы работы", link: "/steps" },
         { label: "Контакты", link: "/contacts" },
       ].map((item, idx) => (
-        <a
+        <Link
           key={idx}
-          href={item.link}
+          to={item.link}
           className="flex justify-between items-center bg-light border border-gray-300 px-5 py-4 rounded-md hover:bg-gray-200 transition group"
         >
           <span className="text-lg font-medium text-primary">{item.label}</span>
           <span className="text-xl text-muted group-hover:translate-x-1 transition-transform">→</span>
-        </a>
+        </Link>
       ))}
     </div>
   </div>
@@ -92,23 +93,28 @@ export default function Home() {
 
 
 
-      {/* CTA */}
-      <section className="bg-gray-800 text-white py-16 px-4 sm:px-6 text-center mt-16">
-        <div className="max-w-4xl mx-auto">
-          <h3 className="text-xl sm:text-2xl font-semibold mb-4">
-            Нужен ППР или проект? Мы всё сделаем за вас!
-          </h3>
-          <p className="mb-6 text-gray-300 text-sm sm:text-base">
-            Отправьте заявку — мы свяжемся с вами в течение 15 минут
-          </p>
-          <a
-            href="/contacts"
-            className="inline-block w-full sm:w-auto bg-white text-gray-800 font-semibold px-6 py-3 rounded-full hover:bg-gray-300 transition"
-          >
-            Оставить заявку
-          </a>
-        </div>
-      </section>
+
+import { Link } from "react-router-dom";
+
+{/* CTA */}
+<section className="bg-gray-800 text-white py-16 px-4 sm:px-6 text-center mt-16">
+  <div className="max-w-4xl mx-auto">
+    <h3 className="text-xl sm:text-2xl font-semibold mb-4">
+      Нужен ППР или проект? Мы всё сделаем за вас!
+    </h3>
+    <p className="mb-6 text-gray-300 text-sm sm:text-base">
+      Отправьте заявку — мы свяжемся с вами в течение 15 минут
+    </p>
+
+    <Link
+      to="/contacts"
+      className="inline-block w-full sm:w-auto bg-white text-gray-800 font-semibold px-6 py-3 rounded-full hover:bg-gray-300 transition"
+    >
+      Оставить заявку
+    </Link>
+  </div>
+</section>
+
     </div>
   );
 }
