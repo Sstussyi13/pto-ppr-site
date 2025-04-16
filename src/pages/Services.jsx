@@ -101,10 +101,10 @@ export default function Services() {
             <PriceTable prices={prices} />
           </div>
           <div className="text-center mt-8">
-            <Link
-                        to="/contacts"
-                        className="inline-block w-full sm:w-auto bg-white text-gray-800 font-semibold px-6 py-3 rounded-full hover:bg-gray-300 transition"
-                      >
+          <Link
+              to="/contacts"
+              className="inline-block bg-gray-800 text-white font-semibold px-6 py-3 rounded-full hover:bg-gray-700 transition"
+            >
               Получить точный расчёт
             </Link>
           </div>
