@@ -1,113 +1,93 @@
-import { useState } from "react";
-import ServiceCard from "../components/ServiceCard";
-import PriceTable from "../components/PriceTable";
-import { Link, useLocation } from "react-router-dom";
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
-export default function Services() {
-  const location = useLocation();
-  const services = [
+import {
+  PhoneCall,
+  FileText,
+  ClipboardCheck,
+  ShieldCheck,
+  UserCheck,
+  Send,
+} from "lucide-react";
+
+export default function Steps() {
+  useEffect(() => {
+    AOS.init({ duration: 800, once: true });
+  }, []);
+
+  const steps = [
     {
-      title: "Разработка ППР",
-      description: "Проект производства работ для строительных и монтажных процессов.",
-      details: "Схемы, графики, пояснительная записка — всё для сдачи в надзорные органы.",
+      title: "Заявка и консультация",
+      description: "Оставляете заявку на сайте или по телефону. Уточняем задачу и сроки.",
+      icon: PhoneCall,
     },
     {
-      title: "Проектирование ПОД",
-      description: "Проекты организации дорожного движения на период строительства.",
-      details: "Согласуем схемы с ГИБДД. Готовим по ГОСТ с подложкой.",
+      title: "Сбор исходных данных",
+      description: "Присылаете ТЗ, чертежи, геодезию. Помогаем, если чего-то не хватает.",
+      icon: FileText,
     },
     {
-      title: "ППРк / ППРс",
-      description: "ППР для крановых, сварочных и опасных работ.",
-      details: "Документация для безопасного проведения работ. Учёт зон действия, ТБ и техники.",
+      title: "Разработка документации",
+      description: "Создаём ППР, ПОД, ПЗР и сметы. Учитываем СП, ГОСТ и ваши пожелания.",
+      icon: ClipboardCheck,
     },
     {
-      title: "ПЗР / ППЗ (земляные работы)",
-      description: "Проекты земляных работ: схемы, чертежи, расчёты.",
-      details: "Разрезы, расчёт объёмов, уклоны, ограждения. Учитываем геологию участка.",
+      title: "Внутренняя проверка",
+      description: "Проверяем читаемость, соответствие нормам и качеству оформления.",
+      icon: ShieldCheck,
     },
     {
-      title: "Технологические карты",
-      description: "Карты на технологические процессы: бетон, отделка и т.д.",
-      details: "Очередность, оборудование, ТБ, графики. Форматы DOCX + PDF.",
+      title: "Согласование с заказчиком",
+      description: "Вы получаете макет. Вносим правки, уточняем детали, подписываем.",
+      icon: UserCheck,
     },
     {
-      title: "Сметная документация",
-      description: "Составление смет, ВОР, калькуляций.",
-      details: "Работаем по ФЕР, ГЭСН, ТСН. Формируем в Excel + PDF. Учитываем регион.",
-    },
-    {
-      title: "Исполнительная документация",
-      description: "Акты, схемы, журналы. Сдача ИД под ключ.",
-      details: "КС-2, КС-3, акты скрытых работ, ИС. По шаблону заказчика или по нормативу.",
+      title: "Передача итогового пакета",
+      description: "Передаём документы в нужных форматах. Готово к сдаче и применению.",
+      icon: Send,
     },
   ];
-
-  const prices = [
-    { name: "ППР на общестроительные работы", duration: "2–3 дня", price: "от 8 000 ₽" },
-    { name: "ПОД (дорожное движение)", duration: "1–2 дня", price: "от 6 000 ₽" },
-    { name: "ППРк", duration: "1–2 дня", price: "от 10 000 ₽" },
-    { name: "Смета", duration: "по запросу", price: "от 3 000 ₽" },
-  ];
-
-  const [modalContent, setModalContent] = useState(null);
 
   return (
-    <section className="bg-background text-primary py-20 px-4 sm:px-6">
+    <section className="bg-white py-20 px-4 text-gray-800">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4">Услуги ПТО и ППР</h2>
-        <p className="text-center text-muted mb-10 text-sm sm:text-base">
-          Проектируем, согласуем, сопровождаем — под ключ по всей России.
+        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4">Этапы работы</h2>
+        <p className="text-center text-gray-500 max-w-2xl mx-auto mb-12 text-base">
+          Сопровождаем проект от первого звонка до финальной сдачи документации.
         </p>
 
-        {/* Карточки */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((service, index) => (
-            <ServiceCard
-              key={index}
-              title={service.title}
-              description={service.description}
-              onMore={() => setModalContent(service)}
-            />
+        <div className="space-y-8">
+          {steps.map((step, idx) => (
+            <div
+              key={idx}
+              data-aos="fade-up"
+              data-aos-delay={idx * 100}
+              className="flex items-start gap-4"
+            >
+              {/* Иконка */}
+              <div className="w-12 h-12 rounded-full bg-gray-100 border border-gray-300 flex items-center justify-center shadow">
+                <step.icon className="w-5 h-5 text-gray-700" />
+              </div>
+
+              {/* Контент */}
+              <div className="bg-gray-50 border border-gray-200 rounded-xl p-5 shadow-sm hover:shadow-md transition-all w-full">
+                <h3 className="text-base font-semibold mb-1">{step.title}</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">{step.description}</p>
+              </div>
+            </div>
           ))}
         </div>
 
-        {/* Модальное окно */}
-        {modalContent && (
-          <div
-            className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
-            onClick={() => setModalContent(null)}
+        {/* CTA кнопка */}
+        <div className="text-center mt-16">
+          <Link
+            to="/contacts"
+            className="inline-flex items-center gap-2 bg-gray-800 text-white font-semibold px-6 py-3 rounded-full hover:bg-gray-700 transition"
           >
-            <div
-              className="bg-background w-full max-w-md mx-4 sm:mx-0 p-6 rounded shadow-lg relative"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <button
-                onClick={() => setModalContent(null)}
-                className="absolute top-2 right-3 text-muted text-lg"
-              >
-                ×
-              </button>
-              <h4 className="text-xl font-semibold mb-2">{modalContent.title}</h4>
-              <p className="text-muted text-sm">{modalContent.details}</p>
-            </div>
-          </div>
-        )}
-
-        {/* Таблица */}
-        <div className="mt-16">
-          <h3 className="text-2xl font-bold mb-4">Цены на популярные услуги</h3>
-          <div className="overflow-x-auto">
-            <PriceTable prices={prices} />
-          </div>
-          <div className="text-center mt-8">
-            <Link
-              to="/contacts"
-              className="inline-block bg-gray-800 text-white font-semibold px-6 py-3 rounded-full hover:bg-gray-700 transition"
-            >
-              Получить точный расчёт
-            </Link>
-          </div>
+            Обсудить проект →
+          </Link>
         </div>
       </div>
     </section>
