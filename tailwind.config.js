@@ -15,6 +15,7 @@ export default {
         light: '#f3f4f6',
         background: '#ffffff',
       },
+<<<<<<< HEAD
       keyframes: {
         press: {
           '0%': { transform: 'scale(1)' },
@@ -35,3 +36,9 @@ export default {
   },
   plugins: [],
 }
+=======
+    },
+  },
+  plugins: [],
+};
+>>>>>>> a5d9d4b2e7d81a4985421be5c9ab9e4d188d4a25

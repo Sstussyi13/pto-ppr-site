@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+<<<<<<< HEAD
 /* Сброс отступов и стандартной коробки */
 * {
   margin: 0;
@@ -12,18 +13,34 @@
 }
 
 /* Корень: ничего не задаем жёстко */
+=======
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+>>>>>>> a5d9d4b2e7d81a4985421be5c9ab9e4d188d4a25
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
+<<<<<<< HEAD
   color-scheme: light;
+=======
+  color: #ffffff;
+  color-scheme: light dark;
+  background-color: #242424;
+
+>>>>>>> a5d9d4b2e7d81a4985421be5c9ab9e4d188d4a25
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+<<<<<<< HEAD
 
 /* Скроллбар для Webkit (Chrome, Safari, Edge) */
 ::-webkit-scrollbar {
@@ -32,11 +49,34 @@
 ::-webkit-scrollbar-track {
   background: #f1f1f1;
 }
+=======
+/* Стилизация скроллбара для Webkit (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+>>>>>>> a5d9d4b2e7d81a4985421be5c9ab9e4d188d4a25
 ::-webkit-scrollbar-thumb {
   background: #888;
   border-radius: 8px;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> a5d9d4b2e7d81a4985421be5c9ab9e4d188d4a25
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
 
+<<<<<<< HEAD
+=======
+/* Для Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1;
+}
+>>>>>>> a5d9d4b2e7d81a4985421be5c9ab9e4d188d4a25

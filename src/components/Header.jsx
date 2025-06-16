@@ -31,6 +31,7 @@ export default function Header() {
         </button>
       </div>
 
+<<<<<<< HEAD
       {/* Мобильное меню */}
       {menuOpen && (
         <>
@@ -44,6 +45,21 @@ export default function Header() {
           <div
             className="fixed top-0 right-0 h-full w-64 bg-white z-50 shadow-lg p-6 animate-slide-in-right"
             onClick={(e) => e.stopPropagation()}
+=======
+      {/* Оверлей и боковое меню */}
+      {menuOpen && (
+        <div
+          className="fixed inset-0 z-40 flex"
+          onClick={closeMenu}
+        >
+          {/* Затемнённый фон */}
+          <div className="fixed inset-0 bg-black/30 backdrop-blur-sm transition-opacity" />
+
+          {/* Меню */}
+          <div
+            className="ml-auto w-72 max-w-full bg-white h-full shadow-xl p-6 flex flex-col z-50 animate-slide-in"
+            onClick={(e) => e.stopPropagation()} // блокирует закрытие при клике ВНУТРИ
+>>>>>>> a5d9d4b2e7d81a4985421be5c9ab9e4d188d4a25
           >
             <div className="flex justify-between items-center mb-6">
               <span className="text-lg font-bold text-zinc-800">Меню</span>
@@ -57,7 +73,11 @@ export default function Header() {
               <Link to="/contacts" onClick={closeMenu} className="text-zinc-700 hover:text-blue-600 transition">Контакты</Link>
             </nav>
           </div>
+<<<<<<< HEAD
         </>
+=======
+        </div>
+>>>>>>> a5d9d4b2e7d81a4985421be5c9ab9e4d188d4a25
       )}
     </header>
   );
