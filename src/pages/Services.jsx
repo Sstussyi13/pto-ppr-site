@@ -1,5 +1,4 @@
 import { useState } from "react";
-<<<<<<< HEAD
 import { Link } from "react-router-dom";
 import {
   ClipboardCheck, TrafficCone,  Construction, Ruler, FileText, FileSearch, BookOpen, Calculator
@@ -67,66 +66,6 @@ export default function Services() {
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4">Услуги ПТО и ППР</h2>
         <p className="text-center text-gray-500 mb-10 text-base">
-=======
-import ServiceCard from "../components/ServiceCard";
-import PriceTable from "../components/PriceTable";
-import { Link } from "react-router-dom";
-
-
-export default function Services() {
-  const services = [
-    {
-      title: "Разработка ППР",
-      description: "Проект производства работ для строительных и монтажных процессов.",
-      details: "Схемы, графики, пояснительная записка — всё для сдачи в надзорные органы.",
-    },
-    {
-      title: "Проектирование ПОД",
-      description: "Проекты организации дорожного движения на период строительства.",
-      details: "Согласуем схемы с ГИБДД. Готовим по ГОСТ с подложкой.",
-    },
-    {
-        title: "ППРк / ППРс",
-        description: "ППР для крановых, сварочных и опасных работ.",
-        details: "Документация для безопасного проведения работ. Учёт зон действия, ТБ и техники.",
-      },
-      {
-        title: "ПЗР / ППЗ (земляные работы)",
-        description: "Проекты земляных работ: схемы, чертежи, расчёты.",
-        details: "Разрезы, расчёт объёмов, уклоны, ограждения. Учитываем геологию участка.",
-      },
-      {
-        title: "Технологические карты",
-        description: "Карты на технологические процессы: бетон, отделка и т.д.",
-        details: "Очередность, оборудование, ТБ, графики. Форматы DOCX + PDF.",
-      },
-      {
-        title: "Сметная документация",
-        description: "Составление смет, ВОР, калькуляций.",
-        details: "Работаем по ФЕР, ГЭСН, ТСН. Формируем в Excel + PDF. Учитываем регион.",
-      },
-      {
-        title: "Исполнительная документация",
-        description: "Акты, схемы, журналы. Сдача ИД под ключ.",
-        details: "КС-2, КС-3, акты скрытых работ, ИС. По шаблону заказчика или по нормативу.",
-      },
-  ];
-
-  const prices = [
-    { name: "ППР на общестроительные работы", duration: "2–3 дня", price: "от 8 000 ₽" },
-    { name: "ПОД (дорожное движение)", duration: "1–2 дня", price: "от 6 000 ₽" },
-    { name: "ППРк", duration: "1–2 дня", price: "от 10 000 ₽" },
-    { name: "Смета", duration: "по запросу", price: "от 3 000 ₽" },
-  ];
-
-  const [modalContent, setModalContent] = useState(null);
-
-  return (
-    <section className="bg-background text-primary py-20 px-4 sm:px-6">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4">Услуги ПТО и ППР</h2>
-        <p className="text-center text-muted mb-10 text-sm sm:text-base">
->>>>>>> a5d9d4b2e7d81a4985421be5c9ab9e4d188d4a25
           Проектируем, согласуем, сопровождаем — под ключ по всей России.
         </p>
 
@@ -137,12 +76,8 @@ export default function Services() {
               key={index}
               title={service.title}
               description={service.description}
-<<<<<<< HEAD
               icon={service.icon}
               onClick={() => setModalContent(service)}
-=======
-              onMore={() => setModalContent(service)}
->>>>>>> a5d9d4b2e7d81a4985421be5c9ab9e4d188d4a25
             />
           ))}
         </div>
@@ -150,65 +85,37 @@ export default function Services() {
         {/* Модальное окно */}
         {modalContent && (
           <div
-<<<<<<< HEAD
             className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50"
             onClick={() => setModalContent(null)}
           >
             <div
               className="bg-white w-full max-w-md mx-4 sm:mx-0 p-6 rounded-xl shadow-xl relative transition-all scale-100"
-=======
-            className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
-            onClick={() => setModalContent(null)}
-          >
-            <div
-              className="bg-background w-full max-w-md mx-4 sm:mx-0 p-6 rounded shadow-lg relative"
->>>>>>> a5d9d4b2e7d81a4985421be5c9ab9e4d188d4a25
               onClick={(e) => e.stopPropagation()}
             >
               <button
                 onClick={() => setModalContent(null)}
-<<<<<<< HEAD
                 className="absolute top-2 right-3 text-gray-400 hover:text-black text-xl"
-=======
-                className="absolute top-2 right-3 text-muted text-lg"
->>>>>>> a5d9d4b2e7d81a4985421be5c9ab9e4d188d4a25
               >
                 ×
               </button>
               <h4 className="text-xl font-semibold mb-2">{modalContent.title}</h4>
-<<<<<<< HEAD
               <p className="text-gray-600 text-sm">{modalContent.details}</p>
-=======
-              <p className="text-muted text-sm">{modalContent.details}</p>
->>>>>>> a5d9d4b2e7d81a4985421be5c9ab9e4d188d4a25
             </div>
           </div>
         )}
 
-<<<<<<< HEAD
         {/* Таблица цен */}
         <div className="mt-20">
-=======
-        {/* Таблица */}
-        <div className="mt-16">
->>>>>>> a5d9d4b2e7d81a4985421be5c9ab9e4d188d4a25
           <h3 className="text-2xl font-bold mb-4">Цены на популярные услуги</h3>
           <div className="overflow-x-auto">
             <PriceTable prices={prices} />
           </div>
           <div className="text-center mt-8">
-<<<<<<< HEAD
             <Link
               to="/contacts"
               className="inline-flex items-center gap-2 bg-gray-800 text-white font-semibold px-6 py-3 rounded-full hover:bg-gray-700 transition"
             >
               <Calculator className="w-5 h-5" />
-=======
-          <Link
-              to="/contacts"
-              className="inline-block bg-gray-800 text-white font-semibold px-6 py-3 rounded-full hover:bg-gray-700 transition"
-            >
->>>>>>> a5d9d4b2e7d81a4985421be5c9ab9e4d188d4a25
               Получить точный расчёт
             </Link>
           </div>

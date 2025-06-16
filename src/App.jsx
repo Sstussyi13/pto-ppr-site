@@ -1,15 +1,8 @@
-<<<<<<< HEAD
 import { Routes, Route, useLocation } from "react-router-dom";
 import { useEffect, useRef } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Lenis from "@studio-freight/lenis";
-=======
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
->>>>>>> a5d9d4b2e7d81a4985421be5c9ab9e4d188d4a25
 
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
@@ -18,7 +11,6 @@ import Steps from "./pages/Steps";
 import Contacts from "./pages/Contacts";
 
 export default function App() {
-<<<<<<< HEAD
   const location = useLocation();
   const lenisRef = useRef(null); // 💡 храним Lenis
 
@@ -77,25 +69,5 @@ export default function App() {
         <Route path="/contacts" element={<Contacts />} />
       </Routes>
     </Layout>
-=======
-  useEffect(() => {
-    AOS.init({
-      duration: 800,   // длительность анимации
-      once: true       // анимация один раз при скролле
-    });
-  }, []);
-
-  return (
-    <Router>
-      <Layout>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/steps" element={<Steps />} />
-          <Route path="/contacts" element={<Contacts />} />
-        </Routes>
-      </Layout>
-    </Router>
->>>>>>> a5d9d4b2e7d81a4985421be5c9ab9e4d188d4a25
   );
 }
